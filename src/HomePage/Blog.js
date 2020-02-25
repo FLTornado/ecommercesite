@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles,ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
@@ -15,6 +15,9 @@ import Footer from './Footer';
 import post1 from './blog-post.1.md';
 import post2 from './blog-post.2.md';
 import post3 from './blog-post.3.md';
+import theme from '../theme.js';
+
+
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -94,6 +97,7 @@ export default function Blog() {
 
   return (
     <React.Fragment>
+      <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="lg">
         <Header title="买手机网" sections={sections} />
@@ -116,6 +120,7 @@ export default function Blog() {
         </main>
       </Container>
       <Footer title="Footer" description="Something here to give the footer a purpose!" />
+      </ThemeProvider>
     </React.Fragment>
   );
 }

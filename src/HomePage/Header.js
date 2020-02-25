@@ -34,7 +34,7 @@ export default function Header(props) {
       <Toolbar className={classes.toolbar}>        
         <Typography
           component="h2"
-          variant="h5"
+          variant="h3"
           color="inherit"
           align="center"
           noWrap
