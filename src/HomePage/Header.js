@@ -46,7 +46,7 @@ export default function Header(props) {
           <SearchIcon />
         </IconButton>
         <Button variant="outlined" size="small">
-          Sign up
+          请登录
         </Button>
       </Toolbar>
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>

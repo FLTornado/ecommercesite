@@ -3,9 +3,9 @@ import { makeStyles,ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import ForumIcon from '@material-ui/icons/Forum';
+import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
@@ -33,15 +33,15 @@ const sections = [
   { title: '一加', url: '#' },
   { title: '魅族', url: '#' },
   { title: '锤子', url: '#' },
-  { title: '谷歌', url: '#' },
-  { title: '诺基亚', url: '#' },
+  { title: 'vivo', url: '#' },
+  { title: '三星', url: '#' },
   { title: '荣耀', url: '#' },
 ];
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: '买手机就上买手机网',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    "在买手机网你可以选购所有的主流手机",
   image: 'https://source.unsplash.com/random',
   imgText: 'main image description',
   linkText: 'Continue reading…',
@@ -49,19 +49,19 @@ const mainFeaturedPost = {
 
 const featuredPosts = [
   {
-    title: 'Featured post',
-    date: 'Nov 12',
+    title: '华为nova7首次曝光：或在华为P40之后四月初发布',
+    date: '2020-02-28',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      '去年12月初，华为推出nova系列最新机型——华为nova6。按照以往的惯例，华为应该会为nova6系列推出Pro版本。但据最新消息，传说中的nova6 Pro算是没戏了，官方会直接跳过Pro版本而推出华为nova7！',
     image: 'https://source.unsplash.com/random',
     imageText: 'Image Text',
   },
   {
-    title: 'Post title',
-    date: 'Nov 11',
+    title: '早报：三星S20系列国行正式发布 乐视去年亏损112.8亿',
+    date: '2020-02-28',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
+      '2月12日凌晨3点，三星Galaxy S20系列在万众期待中如期而至。作为三星2020年的首款旗舰，三星Galaxy S20系列带来的旗舰级体验绝不仅限于惊艳。',
+    image: 'http://img.cnmo-img.com.cn/1710_600x1000/1709827.png',
     imageText: 'Image Text',
   },
 ];
@@ -69,9 +69,9 @@ const featuredPosts = [
 const posts = [post1, post2, post3];
 
 const sidebar = {
-  title: 'About',
+  title: '关于售后',
   description:
-    'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
+    '我们承诺七天无理由退款，为了更好的保证服务质量，请点击下方联系我们的售后人员，为你提供更优质的服务',
   archives: [
     { title: 'March 2020', url: '#' },
     { title: 'February 2020', url: '#' },
@@ -86,9 +86,9 @@ const sidebar = {
     { title: 'April 1999', url: '#' },
   ],
   social: [
-    { name: 'GitHub', icon: GitHubIcon },
-    { name: 'Twitter', icon: TwitterIcon },
-    { name: 'Facebook', icon: FacebookIcon },
+    { name: '邮箱', icon: AlternateEmailIcon },
+    { name: '电话', icon: AddIcCallIcon },
+    { name: 'QQ', icon: ForumIcon },
   ],
 };
 
@@ -109,17 +109,16 @@ export default function Blog() {
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main title="From the firehose" posts={posts} />
+            <Main title="热卖宝贝" posts={posts} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
-              archives={sidebar.archives}
               social={sidebar.social}
             />
           </Grid>
         </main>
       </Container>
-      <Footer title="Footer" description="Something here to give the footer a purpose!" />
+      <Footer title="hwt电商Demo" description="hwt电商Demo" />
       </ThemeProvider>
     </React.Fragment>
   );
