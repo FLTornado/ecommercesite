@@ -10,15 +10,16 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import theme from "../theme.js";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="https://github.com/FLTornado/ecommercesite">
+        hwt的电商Demo
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -51,6 +52,7 @@ export default function SignIn() {
 
   return (
     <Container component="main" maxWidth="xs">
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -112,6 +114,7 @@ export default function SignIn() {
       <Box mt={8}>
         <Copyright />
       </Box>
+    </ThemeProvider>
     </Container>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from './HomePage/Blog';
+import Entry from './HomePage/Entry';
  
 ReactDOM.render(
-  <HomePage />,
+  <Entry />,
   document.querySelector('#root'),
 );
 
