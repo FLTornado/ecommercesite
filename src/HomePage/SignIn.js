@@ -59,7 +59,7 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          登录买手机网
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -95,17 +95,17 @@ export default function SignIn() {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            登录
           </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
-                Forgot password?
+                忘记密码
               </Link>
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
+                {"没有买手机网账号? 点我注册"}
               </Link>
             </Grid>
           </Grid>

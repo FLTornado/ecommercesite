@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolbarTitle: {
     flex: 1,
-    textDecoration: `none`
+    textDecoration: `none`,    
   }
 }));
 
