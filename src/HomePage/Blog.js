@@ -19,18 +19,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const sections = [
-  { title: "华为", url: "#" },
-  { title: "苹果", url: "#" },
-  { title: "小米", url: "#" },
-  { title: "红米", url: "#" },
-  { title: "一加", url: "#" },
-  { title: "魅族", url: "#" },
-  { title: "锤子", url: "#" },
-  { title: "vivo", url: "#" },
-  { title: "三星", url: "#" },
-  { title: "荣耀", url: "#" }
-];
 
 const mainFeaturedPost = {
   title: "买手机就上买手机网",
@@ -63,19 +51,6 @@ const sidebar = {
   title: "关于售后",
   description:
     "我们承诺七天无理由退款，为了更好的保证服务质量，请点击下方联系我们的售后人员，为你提供更优质的服务",
-  archives: [
-    { title: "March 2020", url: "#" },
-    { title: "February 2020", url: "#" },
-    { title: "January 2020", url: "#" },
-    { title: "November 1999", url: "#" },
-    { title: "October 1999", url: "#" },
-    { title: "September 1999", url: "#" },
-    { title: "August 1999", url: "#" },
-    { title: "July 1999", url: "#" },
-    { title: "June 1999", url: "#" },
-    { title: "May 1999", url: "#" },
-    { title: "April 1999", url: "#" }
-  ],
   social: [
     { name: "邮箱", icon: AlternateEmailIcon },
     { name: "电话", icon: AddIcCallIcon },
@@ -92,7 +67,7 @@ export default function Blog() {
         <CssBaseline />
         <Container maxWidth="lg">          
           <main>
-            <MainFeaturedPost post={mainFeaturedPost} sections={sections} />
+            <MainFeaturedPost post={mainFeaturedPost} />
             <Grid container spacing={4}>
               {featuredPosts.map(post => (
                 <FeaturedPost key={post.title} post={post} />

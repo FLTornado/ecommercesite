@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import Modal from '@material-ui/core/Modal';
 import theme from '../theme.js';
 
 const useStyles = makeStyles(theme => ({
@@ -16,14 +17,16 @@ const useStyles = makeStyles(theme => ({
   sidebarSection: {
     marginTop: theme.spacing(3),
     color: '#868883',
-  },
+  }, 
 }));
+
 
 export default function Sidebar(props) {
   const classes = useStyles(theme);
   const { description, social, title } = props;
+ 
 
-  return (
+  return (    
     <Grid item xs={3} md={4}>
       <Paper elevation={0} className={classes.sidebarAboutBox}>
         <Typography variant="h6" gutterBottom>
@@ -35,16 +38,16 @@ export default function Sidebar(props) {
         售后联系方式
       </Typography>
       {social.map(network => (
-        <Link display="block" variant="body1" href="#" key={network}>
+        <Link display="block" variant="body1" key={network}>
           <Grid container direction="row" spacing={1} alignItems="center">
             <Grid item>
               <network.icon />
             </Grid>
             <Grid item>{network.name}</Grid>
           </Grid>
-        </Link>
-      ))}
-    </Grid>
+        </Link>        
+      ))}     
+    </Grid>    
   );
 }
 

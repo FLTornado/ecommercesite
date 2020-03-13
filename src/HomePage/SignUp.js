@@ -5,7 +5,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
 import { Link as RouterLink } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -29,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(3)
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
@@ -43,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignIn() {
+export default function SignUp() {
   const classes = useStyles();
 
   return (
@@ -55,35 +54,54 @@ export default function SignIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            登录买手机网
+            注册
           </Typography>
           <form className={classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="电子邮箱地址"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="密码"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="记住我"
-            />
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="fname"
+                  name="Name"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="Name"
+                  label="昵称"
+                  autoFocus
+                />
+              </Grid>              
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="email"
+                  label="电子邮箱地址"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="password"
+                  label="密码"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={
+                    <Checkbox value="allowExtraEmails" color="primary" />
+                  }
+                  label="我希望通过电子邮箱获得买手机网的相关产品推广与用户调研等信息."
+                />
+              </Grid>
+            </Grid>
             <Button
               type="submit"
               fullWidth
@@ -91,30 +109,25 @@ export default function SignIn() {
               color="primary"
               className={classes.submit}
             >
-              登录
+              注册
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  忘记密码
-                </Link>
-              </Grid>
+            <Grid container justify="flex-end">
               <Grid item>
                 <Typography
                   component={RouterLink}
                   variant="body2"
                   align="right"
                   noWrap
-                  to="/SignUp"
+                  to="/SignIn"
                   className={classes.fsbutton}
                 >
-                  {"没有买手机网账号? 点我注册"}
+                  已经有账号了？点我登录
                 </Typography>
               </Grid>
             </Grid>
           </form>
         </div>
-        <Box mt={8}>
+        <Box mt={5}>
           <Copyright />
         </Box>
       </ThemeProvider>

@@ -13,6 +13,9 @@ import {
 import Blog from "./Blog";
 import SignIn from "./SignIn";
 import Header from "./Header";
+import SignUp from "./SignUp";
+import SearchList from "./SearchList";
+
 export default function Entry() {
 	return (
 		<Router>			
@@ -41,6 +44,12 @@ export default function Entry() {
 					</Route>
 					<Route exact path="/SignIn">
 						<SignIn />
+					</Route>
+					<Route exact path="/SignUp">
+						<SignUp />
+					</Route>
+					<Route exact path="/SearchList">
+						<SearchList />
 					</Route>
 					<Route render={() => <div>Not Found</div>} />
 				</Switch>

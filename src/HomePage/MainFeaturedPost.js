@@ -5,7 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
-import Toolbar from "@material-ui/core/Toolbar";
+import SubHead from "./SubHead";
 
 const useStyles = makeStyles(theme => ({
   toolbarSecondary: {
@@ -46,28 +46,11 @@ const useStyles = makeStyles(theme => ({
 
 export default function MainFeaturedPost(props) {
   const classes = useStyles();
-  const { sections, post } = props;
+  const { post } = props;
 
   return (
-    <React.Fragment>
-      <Toolbar
-        component="nav"
-        variant="dense"
-        className={classes.toolbarSecondary}
-      >
-        {sections.map(section => (
-          <Link
-            color="secondary"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-            className={classes.toolbarLink}
-          >
-            {section.title}
-          </Link>
-        ))}
-      </Toolbar>
+    <React.Fragment>      
+      <SubHead />
       <Paper
         className={classes.mainFeaturedPost}
         style={{ backgroundImage: `url(${post.image})` }}
@@ -107,6 +90,5 @@ export default function MainFeaturedPost(props) {
 }
 
 MainFeaturedPost.propTypes = {
-  sections: PropTypes.array,
   post: PropTypes.object
 };
