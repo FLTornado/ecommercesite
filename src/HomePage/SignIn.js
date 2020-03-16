@@ -11,9 +11,8 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import theme from "../theme.js";
 import Copyright from "./Copyright";
 
 const useStyles = makeStyles(theme => ({
@@ -25,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: 'rgb(220, 0, 78)'
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -35,12 +34,12 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2)
   },
   fsbutton: {
-    textDecoration:  'none',
-    color: '#556cd6', 
-    '&:hover': {
-      textDecoration: 'underline',
-    }   
-  },
+    textDecoration: "none",
+    color: "#556cd6",
+    "&:hover": {
+      textDecoration: "underline"
+    }
+  }
 }));
 
 export default function SignIn() {
@@ -48,76 +47,74 @@ export default function SignIn() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            登录买手机网
-          </Typography>
-          <form className={classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="电子邮箱地址"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="密码"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="记住我"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              登录
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  忘记密码
-                </Link>
-              </Grid>
-              <Grid item>
-                <Typography
-                  component={RouterLink}
-                  variant="body2"
-                  align="right"
-                  noWrap
-                  to="/SignUp"
-                  className={classes.fsbutton}
-                >
-                  {"没有买手机网账号? 点我注册"}
-                </Typography>
-              </Grid>
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          登录买手机网
+        </Typography>
+        <form className={classes.form} noValidate>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="电子邮箱地址"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="密码"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="记住我"
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            登录
+          </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                忘记密码
+              </Link>
             </Grid>
-          </form>
-        </div>
-        <Box mt={8}>
-          <Copyright />
-        </Box>
-      </ThemeProvider>
+            <Grid item>
+              <Typography
+                component={RouterLink}
+                variant="body2"
+                align="right"
+                noWrap
+                to="/SignUp"
+                className={classes.fsbutton}
+              >
+                {"没有买手机网账号? 点我注册"}
+              </Typography>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+      <Box mt={8}>
+        <Copyright />
+      </Box>
     </Container>
   );
 }

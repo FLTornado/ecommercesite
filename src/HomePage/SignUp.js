@@ -10,9 +10,8 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import theme from "../theme.js";
 import Copyright from "./Copyright";
 
 const useStyles = makeStyles(theme => ({
@@ -24,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: 'rgb(220, 0, 78)',
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -46,8 +45,7 @@ export default function SignUp() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
-      <ThemeProvider theme={theme}>
+    <Container component="main" maxWidth="xs">      
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
@@ -129,8 +127,7 @@ export default function SignUp() {
         </div>
         <Box mt={5}>
           <Copyright />
-        </Box>
-      </ThemeProvider>
+        </Box>      
     </Container>
   );
 }
