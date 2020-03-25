@@ -8,6 +8,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import AddShoppingCartOutlinedIcon from "@material-ui/icons/AddShoppingCartOutlined";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link as RouterLink } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({		
 	card: {
@@ -43,6 +44,8 @@ export default function SearchListGrid(props) {
 					className={classes.cardMedia}
 					image="https://source.unsplash.com/random"
 					title="Image title"
+					component={RouterLink}
+					to="/Goods"
 				/>
 				<CardContent className={classes.cardContent}>
 					<Typography gutterBottom variant="h5" component="h2">

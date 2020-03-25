@@ -15,6 +15,7 @@ import SignIn from "./SignIn";
 import Header from "./Header";
 import SignUp from "./SignUp";
 import SearchList from "./SearchList";
+import Goods from "./Goods";
 
 export default function Entry() {
 	return (
@@ -50,6 +51,9 @@ export default function Entry() {
 					</Route>
 					<Route exact path="/SearchList">
 						<SearchList />
+					</Route>
+					<Route exact path="/Goods">
+						<Goods />
 					</Route>
 					<Route render={() => <div>Not Found</div>} />
 				</Switch>

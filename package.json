@@ -16,7 +16,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "react-swipeable-views": "^0.13.9"
   },
   "browserslist": {
     "production": [
