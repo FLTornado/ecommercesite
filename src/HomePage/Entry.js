@@ -16,6 +16,7 @@ import Header from "./Header";
 import SignUp from "./SignUp";
 import SearchList from "./SearchList";
 import Goods from "./Goods";
+import DashBoard from "./dashboard/Dashboard";
 
 export default function Entry() {
 	return (
@@ -54,6 +55,9 @@ export default function Entry() {
 					</Route>
 					<Route exact path="/Goods">
 						<Goods />
+					</Route>
+					<Route exact path="/DashBoard">
+						<DashBoard />
 					</Route>
 					<Route render={() => <div>Not Found</div>} />
 				</Switch>
