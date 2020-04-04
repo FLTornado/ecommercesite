@@ -56,7 +56,7 @@ export default function Entry() {
 					<Route exact path="/Goods">
 						<Goods />
 					</Route>
-					<Route exact path="/DashBoard">
+					<Route path="/DashBoard">
 						<DashBoard />
 					</Route>
 					<Route render={() => <div>Not Found</div>} />

@@ -1,11 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Title from "./Title";
-import MaterialTable from "material-table";
+import MaterialTable, { MTableToolbar } from "material-table";
 import SearchIcon from "@material-ui/icons/Search";
 import DeleteIcon from '@material-ui/icons/Delete';
-import ShopIcon from '@material-ui/icons/Shop';
 import ClearIcon from '@material-ui/icons/Clear';
+import GetAppIcon from "@material-ui/icons/GetApp";
+import ShopTwoIcon from '@material-ui/icons/ShopTwo';
+import MessageIcon from "@material-ui/icons/Message";
 
 // Generate Order Data
 function createData(name, picture, type1, type2, type3, price, amount) {
@@ -47,14 +49,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function ShoppingCar() {
-  const classes = useStyles();  
+  const classes = useStyles();
+  var id = 0;
   const [state, setState] = React.useState({
     columns: [
       { title: "手机名称", field: "name" },
       {
         title: "图片",
         field: "picture",
-        render: rowData => <img src={rowData.picture} style={{ width: 230 }} alt="phone"/>
+        render: rowData => <img src={rowData.picture} style={{ width: 230 }} />
       },
       { title: "类型", field: "type1" },
       { title: "单价", field: "price" },
@@ -71,7 +74,7 @@ export default function ShoppingCar() {
   return (
     <React.Fragment>
       <MaterialTable
-        title={<Title>购物车</Title>}
+        title={<Title>已买到的手机</Title>}
         columns={state.columns}
         data={state.data}
         options={{
@@ -86,13 +89,13 @@ export default function ShoppingCar() {
         }}
         actions={[
         {
-          icon: ShopIcon,
-          tooltip: '购买',
+          icon: ShopTwoIcon,
+          tooltip: '确认收货',
           onClick: (event, rowData) => alert("成功购买 " + rowData.name)
-        },
+        },        
         {
-          icon: DeleteIcon,
-          tooltip: '删除',
+          icon: GetAppIcon,
+          tooltip: '退款',
           onClick: (event, rowData) => {
             new Promise(resolve => {
               setTimeout(() => {
