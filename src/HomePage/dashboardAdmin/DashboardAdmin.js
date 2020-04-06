@@ -10,13 +10,10 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import SmartphoneIcon from "@material-ui/icons/Smartphone";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import MessageIcon from "@material-ui/icons/Message";
 import GetAppIcon from "@material-ui/icons/GetApp";
-import AccountBoxIcon from "@material-ui/icons/AccountBox";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
@@ -32,13 +29,12 @@ import {
   Link,  
   useRouteMatch
 } from "react-router-dom";
-import ShoppingCar from "./ShoppingCar";
 import Footer from "../Footer";
-import PurchasedPhone from "./PurchasedPhone";
-import MyComments from "./MyComments";
-import MyRefund from "./MyRefund";
-import MyInfo from "./MyInfo";
-import MyPassword from "./MyPassword";
+import AccountAdmin from "./AccountAdmin";
+import PhoneAdminDelete from "./PhoneAdminDelete";
+import PhoneAdminAdd from "./PhoneAdminAdd";
+import CommentsAdmin from "./CommentsAdmin";
+import RefundAdmin from "./RefundAdmin";
 
 const drawerWidth = 240;
 
@@ -145,7 +141,7 @@ export default function Dashboard() {
             noWrap
             className={classes.title}
           >
-            用户中心
+            后台管理
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -170,25 +166,31 @@ export default function Dashboard() {
         <List>
           {/*mainListItems*/}
           <div>
-            <ListItem button component={Link} to={`${url}/shoppingcar`}>
+            <ListItem button component={Link} to={`${url}/account`}>
               <ListItemIcon>
-                <ShoppingCartIcon />
+                <AccountBoxIcon />
               </ListItemIcon>
-              <ListItemText primary="购物车" />
+              <ListItemText primary="账户管理" />
             </ListItem>
-            <ListItem button component={Link} to={`${url}/purchased`}>
+            <ListItem button component={Link} to={`${url}/phonedelete`}>
               <ListItemIcon>
                 <SmartphoneIcon />
               </ListItemIcon>
-              <ListItemText primary="已买到的手机" />
+              <ListItemText primary="下架货物" />
             </ListItem>
-            <ListItem button component={Link} to={`${url}/comments`}>
+            <ListItem button component={Link} to={`${url}/phoneadd`}>
+              <ListItemIcon>
+                <SmartphoneIcon />
+              </ListItemIcon>
+              <ListItemText primary="上架货物" />
+            </ListItem>
+            <ListItem button component={Link} to={`${url}/commentsadmin`}>
               <ListItemIcon>
                 <MessageIcon />
               </ListItemIcon>
               <ListItemText primary="评价管理" />
             </ListItem>
-            <ListItem button component={Link} to={`${url}/refund`}>
+            <ListItem button component={Link} to={`${url}/refundadmin`}>
               <ListItemIcon>
                 <GetAppIcon />
               </ListItemIcon>
@@ -196,25 +198,7 @@ export default function Dashboard() {
             </ListItem>
           </div>
         </List>
-        <Divider />
-        <List>
-          {/*secondaryListItems*/}
-          <div>
-            <ListSubheader inset>账户信息</ListSubheader>
-            <ListItem button component={Link} to={`${url}/myinfo`}>
-              <ListItemIcon>
-                <AccountBoxIcon />
-              </ListItemIcon>
-              <ListItemText primary="个人信息" />
-            </ListItem>
-            <ListItem button component={Link} to={`${url}/mypassword`}>
-              <ListItemIcon>
-                <VpnKeyIcon />
-              </ListItemIcon>
-              <ListItemText primary="修改密码" />
-            </ListItem>
-          </div>
-        </List>
+        <Divider />        
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -223,23 +207,20 @@ export default function Dashboard() {
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Switch>                
-                <Route path={`${path}/purchased`}>
-                  <PurchasedPhone />
+                <Route path={`${path}/phonedelete`}>
+                  <PhoneAdminDelete />
                 </Route>
-                <Route path={`${path}/comments`}>
-                  <MyComments />
+                <Route path={`${path}/phoneadd`}>
+                  <PhoneAdminAdd />
                 </Route>
-                <Route path={`${path}/refund`}>
-                  <MyRefund />
+                <Route path={`${path}/commentsadmin`}>
+                  <CommentsAdmin />
                 </Route>
-                <Route path={`${path}/myinfo`}>
-                  <MyInfo />
-                </Route>
-                <Route path={`${path}/mypassword`}>
-                  <MyPassword />
-                </Route>
+                <Route path={`${path}/refundadmin`}>
+                  <RefundAdmin />
+                </Route>                
                 <Route path={path}>
-                  <ShoppingCar />
+                  <AccountAdmin />
                 </Route>
               </Switch>              
             </Grid>

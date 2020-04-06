@@ -3,14 +3,11 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import { Link as RouterLink } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Copyright from "./Copyright";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -47,10 +44,10 @@ export default function SignUp() {
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+            <AccountBoxIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            注册
+            个人信息
           </Typography>
           <form className={classes.form} noValidate>
             <Grid container spacing={2}>
@@ -117,27 +114,11 @@ export default function SignUp() {
               color="primary"
               className={classes.submit}
             >
-              注册
+              修改
             </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <Typography
-                  component={RouterLink}
-                  variant="body2"
-                  align="right"
-                  noWrap
-                  to="/SignIn"
-                  className={classes.fsbutton}
-                >
-                  已经有账号了？点我登录
-                </Typography>
-              </Grid>
-            </Grid>
+            
           </form>
-        </div>
-        <Box mt={5}>
-          <Copyright />
-        </Box>      
+        </div>        
     </Container>
   );
 }

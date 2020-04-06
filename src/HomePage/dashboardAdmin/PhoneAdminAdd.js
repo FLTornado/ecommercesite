@@ -3,14 +3,11 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import { Link as RouterLink } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Copyright from "./Copyright";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -45,24 +42,21 @@ export default function SignUp() {
   return (
     <Container component="main" maxWidth="xs">      
         <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
+        <div className={classes.paper}>         
           <Typography component="h1" variant="h5">
-            注册
+            货物管理-上架
           </Typography>
           <form className={classes.form} noValidate>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
                   autoComplete="fname"
-                  name="Name"
+                  name="phoneName"
                   variant="outlined"
                   required
                   fullWidth
-                  id="Name"
-                  label="昵称"
+                  id="phoneName"
+                  label="手机名称"
                   autoFocus
                 />
               </Grid>              
@@ -71,10 +65,9 @@ export default function SignUp() {
                   variant="outlined"
                   required
                   fullWidth
-                  id="email"
-                  label="电子邮箱地址"
-                  name="email"
-                  autoComplete="email"
+                  id="picurl"
+                  label="手机图片url"
+                  name="picurl"                  
                 />
               </Grid>
               <Grid item xs={12}>
@@ -82,11 +75,9 @@ export default function SignUp() {
                   variant="outlined"
                   required
                   fullWidth
-                  name="password"
-                  label="密码"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
+                  name="nettype"
+                  label="网络类型"                 
+                  id="nettype"                  
                 />
               </Grid>
               <Grid item xs={12}>
@@ -94,9 +85,9 @@ export default function SignUp() {
                   variant="outlined"
                   required
                   fullWidth
-                  name="phone"
-                  label="手机号码"                  
-                  id="phone"                  
+                  name="color"
+                  label="机身颜色"                  
+                  id="color"                  
                 />
               </Grid>
               <Grid item xs={12}>
@@ -104,9 +95,29 @@ export default function SignUp() {
                   variant="outlined"
                   required
                   fullWidth
-                  name="address"
-                  label="地址"                  
-                  id="address"                  
+                  name="ram"
+                  label="存储容量"                  
+                  id="ram"                  
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="price"
+                  label="单价"                  
+                  id="price"                  
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="numphone"
+                  label="库存"                  
+                  id="numphone"                  
                 />
               </Grid>
             </Grid>
@@ -117,27 +128,11 @@ export default function SignUp() {
               color="primary"
               className={classes.submit}
             >
-              注册
+              上架
             </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <Typography
-                  component={RouterLink}
-                  variant="body2"
-                  align="right"
-                  noWrap
-                  to="/SignIn"
-                  className={classes.fsbutton}
-                >
-                  已经有账号了？点我登录
-                </Typography>
-              </Grid>
-            </Grid>
+            
           </form>
-        </div>
-        <Box mt={5}>
-          <Copyright />
-        </Box>      
+        </div>        
     </Container>
   );
 }

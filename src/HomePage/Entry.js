@@ -17,6 +17,7 @@ import SignUp from "./SignUp";
 import SearchList from "./SearchList";
 import Goods from "./Goods";
 import DashBoard from "./dashboard/Dashboard";
+import DashBoardAdmin from "./dashboardAdmin/DashboardAdmin";
 
 export default function Entry() {
 	return (
@@ -58,6 +59,9 @@ export default function Entry() {
 					</Route>
 					<Route path="/DashBoard">
 						<DashBoard />
+					</Route>
+					<Route path="/Admin">
+						<DashBoardAdmin />
 					</Route>
 					<Route render={() => <div>Not Found</div>} />
 				</Switch>

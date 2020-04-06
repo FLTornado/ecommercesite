@@ -1,13 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Title from "./Title";
-import MaterialTable, { MTableToolbar } from "material-table";
+import MaterialTable from "material-table";
 import SearchIcon from "@material-ui/icons/Search";
-import DeleteIcon from '@material-ui/icons/Delete';
 import ClearIcon from '@material-ui/icons/Clear';
 import GetAppIcon from "@material-ui/icons/GetApp";
 import ShopTwoIcon from '@material-ui/icons/ShopTwo';
-import MessageIcon from "@material-ui/icons/Message";
 
 // Generate Order Data
 function createData(name, picture, type1, type2, type3, price, amount) {
@@ -49,17 +47,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function ShoppingCar() {
-  const classes = useStyles();
-  var id = 0;
   const [state, setState] = React.useState({
     columns: [
       { title: "手机名称", field: "name" },
       {
         title: "图片",
         field: "picture",
-        render: rowData => <img src={rowData.picture} style={{ width: 230 }} />
+        render: rowData => <img src={rowData.picture} style={{ width: 230 }} alt="phone"/>
       },
-      { title: "类型", field: "type1" },
+      { title: "类型", render: rowData => <p>{rowData.type1}<br/>{rowData.type2}<br/>{rowData.type3}</p>  },
       { title: "单价", field: "price" },
       { title: "数量", field: "amount" },
       {
